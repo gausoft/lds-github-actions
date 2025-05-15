@@ -17,11 +17,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           
-    #   - name: Ajout automatique de l'empreinte du serveur
-    #     run: |
-    #       mkdir -p ~/.ssh
-    #       ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-    #       chmod 644 ~/.ssh/known_hosts
+      - name: Ajout automatique de l'empreinte du serveur
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
 
       - name: Déploiement vers le serveur
         run: |
