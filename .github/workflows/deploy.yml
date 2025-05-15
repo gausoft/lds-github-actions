@@ -21,4 +21,4 @@ jobs:
         key: ${{ secrets.SERVER_KEY }}
         port: 22
         script: |
-          rsync -avz --delete ./lds-github-actions /var/www/site-gausoft/
+          rsync -avz ./ /var/www/site-gausoft/
